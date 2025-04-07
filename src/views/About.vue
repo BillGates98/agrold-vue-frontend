@@ -125,11 +125,79 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+.arian-thread {
+  height: 60px;
+  padding: 10px;
+  background: #f3f3f3;
+  font-weight: bold;
+  font-size: 25px;
+  color: #b3b3b3;
+}
+
+.info_title {
+  font-weight: bold;
+  font-size: 25px;
+  color: #b3b3b3;
+}
+
+.active-p {
+  color: #858d85;
+}
+
+
+.foowrap {
+  position: relative;
+  min-height: 100%;
+}
+
+.jump-top {
+  padding-top: 30px;
+}
+
+
+
+@media (min-width: 376px) {
+  .foowrap {
+    /*border : solid 1px red; */
+    position: relative;
+    min-height: calc(100vh - 400px);
+  }
+}
+
+@media (min-width: 576px) {
+  .foowrap {
+    /*border : solid 1px blue ; */
+    position: relative;
+    min-height: calc(100vh - 400px);
+  }
+}
+
+@media (min-width: 768px) {
+  .foowrap {
+    /*border : solid 1px brown; */
+    position: relative;
+    min-height: calc(100vh - 224px);
+    height: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .foowrap {
+    /*border : solid 1px green; */
+    position: relative;
+    min-height: calc(100vh - 224px);
+
+  }
+}
+
+@media (min-width: 1200px) {}
+
+/********/
+@media (max-width: 576px) {
+  .foowrap {
+    /*border : solid 1px purple; */
+    position: relative;
+    min-height: calc(100vh - 450px);
   }
 }
 </style>

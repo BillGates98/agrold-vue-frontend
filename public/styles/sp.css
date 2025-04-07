@@ -140,10 +140,13 @@ color: #b3b3b3;
   max-height: 30px !important;
 }
 .info_title {
-  
+  padding : 10px 0;
+  font-weight: bold;
+  font-size: 25px;
+  color : #b3b3b3;
 }
 .pos-l {
-  
+  border-left: solid 5px #fefefe;
 }
 .active-p {
   color : #858d85;

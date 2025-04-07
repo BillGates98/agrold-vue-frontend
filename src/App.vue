@@ -10,7 +10,7 @@ import Footer from './components/shared/Footer.vue';
     <div class="row">
       <Header />
     </div>
-    <div class="row" style="padding-top: 2rem; padding-bottom: 2rem;">
+    <div class="row" style="padding-top: 5rem; padding-bottom: 8rem;">
       <RouterView />
     </div>
     <div class="row">
@@ -37,4 +37,8 @@ import Footer from './components/shared/Footer.vue';
 
 </template>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  color: black !important;
+}
+</style>
