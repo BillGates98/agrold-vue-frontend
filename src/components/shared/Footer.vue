@@ -1,0 +1,47 @@
+<script lang="ts" setup>
+</script>
+
+<template>
+    <footer class="footer">
+        <div class="container">
+            <div class="col-md-12 col-lg-12 resolve-grid">
+                <div class="col">
+                    <a href="http://www.ibc-montpellier.fr/wp/wp5"><div class="hexagone"><img src="/images/IBC.png" alt="IBC"></div></a>
+                </div>
+                <div class="col">
+                    <a href="http://www.cirad.fr"><div class="hexagone"><img alt="CIRAD" src="/images/CIRAD.png"></div></a>
+                </div>
+                <div class="col">
+                    <a href="http://www.ird.fr"><div class="hexagone"><img src="/images/IRD.png" alt="IRD"></div></a> 
+                </div>
+                <div class="col">
+                                <a href="https://www.umontpellier.fr"><div class="hexagone"><img src="/images/UM.png" alt="Univ. Montpellier"></div></a>
+                </div>
+                <div class="col">
+                                    <a href="https://www.france-bioinformatique.fr"><div class="hexagone"><img src="/images/IFB.png" alt="INRIA"></div></a>
+                </div>
+                            
+                <div class="col">
+                    <a href="http://www.southgreen.fr"><div class="hexagone"><img src="/images/southgreen.png" alt="INRIA"></div></a>
+                </div>
+                            
+            </div>
+        </div>
+        <div class="copyright">
+            &COPY; AgroLD 2019
+            <button 
+            data-target="#labelstoreModal" 
+            data-toggle="modal" 
+            type="button" 
+            class="btn m-2 btn-sm btn-outline-light"
+            >
+                Change your consents
+            </button>
+        </div>
+	
+    </footer>
+</template>
+
+<style lang="css" scoped>
+
+</style>
