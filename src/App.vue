@@ -5,12 +5,12 @@ import Footer from './components/shared/Footer.vue';
 </script>
 
 <template>
-  <div class="container">
+  <div class="container app-container">
 
-    <div class="row">
+    <div class="row header-view">
       <Header />
     </div>
-    <div class="row" style="padding-top: 5rem; padding-bottom: 8rem;">
+    <div class="row router-view">
       <RouterView />
     </div>
     <div class="row">
@@ -40,5 +40,11 @@ import Footer from './components/shared/Footer.vue';
 <style scoped>
 h1 {
   color: black !important;
+}
+
+.router-view {
+  width: 100% !important;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
 }
 </style>

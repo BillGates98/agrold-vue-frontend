@@ -53,6 +53,7 @@
 <style lang="css" scoped>
 footer {
     height: auto;
+    z-index: 1000;
 }
 
 footer.footer {

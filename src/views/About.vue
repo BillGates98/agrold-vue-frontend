@@ -150,9 +150,9 @@
   min-height: 100%;
 }
 
-.jump-top {
+/* .jump-top {
   padding-top: 30px;
-}
+} */
 
 
 
