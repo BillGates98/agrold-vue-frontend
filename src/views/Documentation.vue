@@ -360,8 +360,8 @@ $(document).ready(function () {
   </div>
 </template>
 
-<style>
-@import '@/assets/sidebar.css';
+<style scoped>
+@import '@/assets/css/sidebar.css';
 
 .main {
   margin-bottom: 5rem !important;

@@ -161,9 +161,6 @@ var canvasDots = function(nbDots,dist) {
 	}
 	window.onload = function() {
 		canvas = document.querySelector('canvas');
-		if (canvas == null) {
-			return;
-		}
 		ctx = canvas.getContext('2d');
 		init();
 		window.setInterval(checkOverFlow,30000);
