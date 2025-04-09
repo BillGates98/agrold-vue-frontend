@@ -1,6 +1,6 @@
-export const WEB_APP_URL: string = "http://agrold.southgreen.fr/agrold";
-
 export const DEV_APP_URL: string = "https://v2.agrold.org/agrold";
+
+export const WEB_APP_URL: string = DEV_APP_URL; // "http://agrold.southgreen.fr/agrold";
 
 export const SPAR_QL_ENDPOINT_URL: string = "http://sparql.southgreen.fr"; 
 

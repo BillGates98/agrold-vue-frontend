@@ -1,10 +1,11 @@
 /* 
  * General definitions for the advanced search
  */
-var url = AGROLDAPIJSONURL;
+
+var url = A_GRO_LD_API_JSON_URL;
 var maxAuthorsLength = 100;
 var DEFAULT_PAGE_SIZE = 30; // limit number of results per page
-var sparqlEndpoint = SPARQLENDPOINTURL;
+var sparqlEndpoint = SPAR_QL_ENDPOINT_URL;
 var holdMessage = '<center id="holdMessage"><img src="images/wait_animated.gif" alt="Please Wait!"/></center>';
 
 function viewAsGraph(entityUri, divId) {

@@ -319,7 +319,7 @@ function EdgeData(sourceNode, targetNode, relationDisplay, relation, relationTyp
 function KnetmapsAdaptator() {
     this.DEFAULT_RELATION_SIZE = "1px";
     this.nbMaxDeLiens = 1000;
-    this.describeBaseURL = WEBAPPURL + "/api/describe4visualization.json?pageSize="+this.nbMaxDeLiens+"&uri=";
+    this.describeBaseURL = WEB_APP_URL + "/api/describe4visualization.json?pageSize="+this.nbMaxDeLiens+"&uri=";
     this._graphJSON = new Graph();
     this._allGraphData = new GraphData("FilteredGraphUnconnected", "1.0");
     this.nextId = 0;

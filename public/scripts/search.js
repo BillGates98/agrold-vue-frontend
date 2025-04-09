@@ -4,12 +4,28 @@
  * and open the template in the editor.
  */
 var result = "";
-var sparqljson;
+var spar_ql_json = "";
 var numberOfTables = 0;
 
+function displayResult(targetId, sparqljsonResult) {
+    removeHoldMessage(targetId);
+    yasr = YASR(document.getElementById(targetId), {
+        //this way, the URLs in the results are prettified using the defined prefixes in the query
+        //getUsedPrefixes: yasqe.getPrefixesFromQuery,
+        useGoogleCharts: false,
+        drawOutputSelector: false,
+        //drawDownloadIcon: false,
+        persistency: {
+            prefix: false
+        }
+    });
+
+    yasr.setResponse(sparqljsonResult);
+}
+
 function drawResultTable(data, entityType, keyword, page) {
-    var sparqljson = data.data;
-    displayResult("result", sparqljson);
+    var spar_ql_json = data.data;
+    displayResult("as-result", spar_ql_json);
     $("tr.odd").ready(function () {
         var nbResults = data.obj["results"]["bindings"].length;
         var previousBtnId = "previousPage" + numberOfTables;
@@ -29,15 +45,15 @@ function drawResultTable(data, entityType, keyword, page) {
  */
 async function search(entityType, keyword, page) {
     window.swagger = new SwaggerClient({
-        url:  window.location.origin+AGROLDAPIJSONURL
+        url:  A_GRO_LD_API_JSON_URL, // window.location.origin+
     }).then(
         client => {
-            displayHoldMessage("#result");
+            displayHoldMessage("#as-result");
             switch (entityType) {
                 case "gene":
                     client.execute({ 
                         operationId: 'getGenesByKeyWord', 
-                        parameters: { format: DEFAULTAPIFORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
+                        parameters: { format: DEFAULT_API_FORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
                     }).then(
                         data => drawResultTable(data, entityType, keyword, page)
                     )
@@ -45,7 +61,7 @@ async function search(entityType, keyword, page) {
                 case "protein":
                     client.execute({ 
                         operationId: 'getProteinsByKeyWord', 
-                        parameters: { format: DEFAULTAPIFORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
+                        parameters: { format: DEFAULT_API_FORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
                     }).then(
                         data => drawResultTable(data, entityType, keyword, page)
                     )
@@ -53,7 +69,7 @@ async function search(entityType, keyword, page) {
                 case "qtl":
                     client.execute({ 
                         operationId: 'getQtlsByKeyWord', 
-                        parameters: { format: DEFAULTAPIFORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
+                        parameters: { format: DEFAULT_API_FORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
                     }).then(
                         data => drawResultTable(data, entityType, keyword, page)
                     )
@@ -61,7 +77,7 @@ async function search(entityType, keyword, page) {
                 case "pathway":
                     client.execute({ 
                         operationId: 'getPathwaysByKeyWord', 
-                        parameters: { format: DEFAULTAPIFORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
+                        parameters: { format: DEFAULT_API_FORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
                     }).then(
                         data => drawResultTable(data, entityType, keyword, page)
                     )
@@ -69,13 +85,13 @@ async function search(entityType, keyword, page) {
                 case "ontology":
                     client.execute({ 
                         operationId: 'getOntologyTermsByKeyWord', 
-                        parameters: { format: DEFAULTAPIFORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
+                        parameters: { format: DEFAULT_API_FORMAT, keyword: keyword, pageSize: DEFAULT_PAGE_SIZE, page },
                     }).then(
                         data => drawResultTable(data, entityType, keyword, page)
                     )
                     break;
                 default:
-                    $("#result").html("nothing found");
+                    $("#as-result").html("nothing found");
             }
         });
 }
