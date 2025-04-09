@@ -9,3 +9,5 @@ export const FACETED_URL:string = "http://volvestre.cirad.fr:8890/fct/";
 export const A_GRO_LD_API_JSON_URL: string = DEV_APP_URL + "/api/openapi.json";
 
 export const DEFAULT_API_FORMAT: string = ".jsonld";
+
+export const REL_FINDER_URL = "https://rf.v2.agrold.org/"
