@@ -450,13 +450,10 @@ div.main thead tr {
   color: #ffffff;
   background-color: #2671A2;
 }
-</style>
-<style scoped>
-@media (min-width: 1024px) {
 
-  #app {
-    padding: 0 4rem;
-    max-width: none;
+@media (max-width: 1024px) {
+  #sidebar-wrapper {
+    display: none;
   }
 }
 </style>
