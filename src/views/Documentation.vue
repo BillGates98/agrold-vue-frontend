@@ -8,7 +8,7 @@ $(document).ready(function () {
     let tag = $(this).attr("href");
     let the_element = "h4#" + tag.replace('#', '');
     $('html, body').animate({
-      scrollTop: $(the_element).offset().top - 140
+      scrollTop: $(the_element).offset().top - 150
     }, 'slow');
   });
 });
@@ -18,7 +18,7 @@ $(document).ready(function () {
 <template>
   <div id="wrapper" class="toggled">
 
-    <div id="sidebar-wrapper">
+    <div id="sidebar-wrapper" style="top: 8.2rem;">
       <ul class="sidebar-nav">
         <li class="sidebar-brand user-ban">
           <div class="col-md-12">
@@ -376,14 +376,6 @@ $(document).ready(function () {
   background: rgb(255, 255, 255);
 }
 
-.arian-thread {
-  height: 60px;
-  padding: 10px;
-  background: #f3f3f3;
-  font-weight: bold;
-  font-size: 25px;
-  color: #b3b3b3;
-}
 
 .foowrap {
   padding-top: 30px;
@@ -457,5 +449,14 @@ div.main {}
 div.main thead tr {
   color: #ffffff;
   background-color: #2671A2;
+}
+</style>
+<style scoped>
+@media (min-width: 1024px) {
+
+  #app {
+    padding: 0 4rem;
+    max-width: none;
+  }
 }
 </style>

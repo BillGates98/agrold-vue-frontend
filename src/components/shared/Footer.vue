@@ -1,20 +1,38 @@
 <script lang="js" setup>
 
 $(document).ready(function () {
-    function displayElementOnScroll(elementId) {
-        $(window).scroll(function () {
-            const documentHeight = $(document).height();
-            const windowHeight = $(window).height();
-            const scrollPosition = $(window).scrollTop();
-            const appearancePosition = documentHeight - windowHeight - 100;
-            if (scrollPosition >= appearancePosition) {
-                $(elementId).fadeIn('slow');
-            } else {
-                $(elementId).fadeOut('slow');
-            }
-        });
+    function scrollBarVerticaleActive() {
+        return $(document).height() > $(window).height();
     }
+
+    function displayElementOnScroll(elementId) {
+
+        if (scrollBarVerticaleActive()) {
+            $(window).scroll(function () {
+                const documentHeight = $(document).height();
+                const windowHeight = $(window).height();
+                const scrollPosition = $(window).scrollTop();
+                const appearancePosition = documentHeight - windowHeight - 100;
+
+                if (scrollPosition >= appearancePosition) {
+                    $(elementId).fadeIn('slow');
+                } else {
+                    $(elementId).fadeOut('slow');
+                }
+            });
+        } else {
+            $(elementId).css({
+                'display': 'block'
+            });
+        }
+
+    }
+
+    $(window).resize(function () {
+        displayElementOnScroll('#footer');
+    });
     displayElementOnScroll('#footer');
+
 });
 </script>
 

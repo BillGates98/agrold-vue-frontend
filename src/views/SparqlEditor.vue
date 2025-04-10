@@ -62,8 +62,8 @@ addPlugin("/sparql-editor/graphPlugin.js");
       </span>
       <hr />
     </div>
-    <div class="container-fluid">
-      <div id="main" style="overflow:auto;">
+    <div class="container-fluid only-queries">
+      <div id=" main" style="overflow:auto;">
         <div id="sparql">
           <div id="cmd-container" data-step="6" data-intro="Hand over to see what shortcuts are available">
             <b id="cmds">KEYBOARD COMMANDS</b>
@@ -188,4 +188,8 @@ addPlugin("/sparql-editor/graphPlugin.js");
 @import '@/assets/sparql-editor/yasr.min.css';
 @import '@/assets/introjs/introjs.css';
 @import '@/assets/sparql-editor/main.css';
+
+.only-queries {
+  width: 1400px !important;
+}
 </style>

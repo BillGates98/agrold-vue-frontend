@@ -3,12 +3,18 @@
 </script>
 <template>
     <div class="container-fluid arian-thread">
-        <div class="info_title">
-            <div class="container pos-l">
-                <slot name="baseText"></slot> > <span class="active-p">
-                    <slot name="nextText"></slot>
-                </span>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="info_title">
+                    <div class="container pos-l">
+                        <slot name="baseText"></slot> > <span class="active-p">
+                            <slot name="nextText"></slot>
+                        </span>
+                    </div>
+                </div>
             </div>
+            <div class="col-2"></div>
         </div>
     </div>
 </template>
@@ -25,13 +31,14 @@
     position: fixed;
     width: 100%;
     left: 0;
-    top: 4%;
+    top: 4rem;
+    border-top: 1px solid greenyellow;
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.19);
 }
 
 .info_title {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 5rem;
     color: #b3b3b3;
     padding-left: 0px;
 }
@@ -76,7 +83,7 @@
         padding: 8px;
         padding-top: 14px;
         padding-left: 0px;
-        top: 7.3%;
+        top: 4.5rem;
     }
 
     .info_title {
@@ -90,7 +97,7 @@
         font-size: 22px;
         padding: 8px;
         padding-left: 0px;
-        top: 7%;
+        top: 4.5rem;
     }
 
     .info_title {
