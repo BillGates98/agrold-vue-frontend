@@ -1,4 +1,5 @@
 <script setup lang="js">
+import ArianThread from '@/components/shared/ArianThread.vue';
 import { A_GRO_LD_API_JSON_URL } from '../assets/scripts/config';
 import { addPlugin } from '@/assets/scripts/utils';
 
@@ -35,13 +36,14 @@ function banInjector() {
 </script>
 
 <template>
-  <div class="container-fluid arian-thread">
-    <div class="info_title">
-      <div class="container pos-l">
-        Help > <span class="active-p">AgroLD API</span>
-      </div>
-    </div>
-  </div>
+  <ArianThread>
+    <template #baseText>
+      Help
+    </template>
+    <template #nextText>
+      AgroLD API
+    </template>
+  </ArianThread>
   <div class="foowrap">
     <div id="inject-info" class="container-fluid swag-swag">
       <div class="container">

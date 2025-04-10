@@ -1,8 +1,25 @@
-<script lang="ts" setup>
+<script lang="js" setup>
+
+$(document).ready(function () {
+    function displayElementOnScroll(elementId) {
+        $(window).scroll(function () {
+            const documentHeight = $(document).height();
+            const windowHeight = $(window).height();
+            const scrollPosition = $(window).scrollTop();
+            const appearancePosition = documentHeight - windowHeight - 100;
+            if (scrollPosition >= appearancePosition) {
+                $(elementId).fadeIn('slow');
+            } else {
+                $(elementId).fadeOut('slow');
+            }
+        });
+    }
+    displayElementOnScroll('#footer');
+});
 </script>
 
 <template>
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="col-md-12 col-lg-12 resolve-grid">
                 <div class="col">
@@ -54,6 +71,7 @@
 footer {
     height: auto;
     z-index: 1000;
+    display: none;
 }
 
 footer.footer {
@@ -61,17 +79,13 @@ footer.footer {
     padding: 0;
     text-align: center;
     width: 100% !important;
-    /* Set the fixed height of the footer here */
-    /*! height: ; */
     line-height: 30px;
-    /* Vertically center the text there */
     background-color: #f6f6f6;
     bottom: 0;
     left: 0;
 }
 
 footer .resolve-grid {
-    /* Solve the conflict between fulpage.JS(CSS) and Bootstrap */
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

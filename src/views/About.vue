@@ -1,12 +1,17 @@
 <script setup lang="ts">
+import ArianThread from '@/components/shared/ArianThread.vue';
+
 </script>
 
 <template>
-  <div class="container-fluid arian-thread">
-    <div class="info_title">
-      <div class="container pos-l">Search > <span class="active-p">Quick Search</span></div>
-    </div>
-  </div>
+  <ArianThread>
+    <template #baseText>
+      Search
+    </template>
+    <template #nextText>
+      Quick Search
+    </template>
+  </ArianThread>
   <div class="foowrap">
     <section>
       <div class="container jump-top">
@@ -125,26 +130,6 @@
 </template>
 
 <style scoped>
-.arian-thread {
-  height: 60px;
-  padding: 10px;
-  background: #f3f3f3;
-  font-weight: bold;
-  font-size: 25px;
-  color: #b3b3b3;
-}
-
-.info_title {
-  font-weight: bold;
-  font-size: 25px;
-  color: #b3b3b3;
-}
-
-.active-p {
-  color: #858d85;
-}
-
-
 .foowrap {
   position: relative;
   min-height: 100%;

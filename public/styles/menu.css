@@ -69,9 +69,9 @@ Responsive navbar-brand image CSS
 nav.navbar {
   background : #86b817;
   background : #fff;
-  -webkit-box-shadow: 0px 3px 8px 0px rgba(50, 50, 50, 0.25);
-  -moz-box-shadow:    0px 3px 8px 0px rgba(50, 50, 50, 0.25);
-  box-shadow:         0px 3px 8px 0px rgba(50, 50, 50, 0.25);
+  /* -webkit-box-shadow: 0px 3px 8px 0px rgba(50, 50, 50, 0.25);
+  -moz-box-shadow:    0px 3px 8px 0px rgba(50, 50, 50, 0.25); */
+  /* box-shadow:         0px 3px 8px 0px rgba(50, 50, 50, 0.25); */
 }
 .navbar-light .navbar-nav .nav-link {
   color : #111 !important;

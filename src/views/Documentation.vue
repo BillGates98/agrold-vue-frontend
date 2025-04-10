@@ -1,4 +1,6 @@
 <script setup lang="js">
+import ArianThread from '@/components/shared/ArianThread.vue';
+
 $(document).ready(function () {
   $(".checkMe").click(function (e) {
     $('.checkMe').removeClass('fkfk');
@@ -6,7 +8,7 @@ $(document).ready(function () {
     let tag = $(this).attr("href");
     let the_element = "h4#" + tag.replace('#', '');
     $('html, body').animate({
-      scrollTop: $(the_element).offset().top - 90
+      scrollTop: $(the_element).offset().top - 140
     }, 'slow');
   });
 });
@@ -43,11 +45,14 @@ $(document).ready(function () {
         </li>
       </ul>
     </div>
-    <div class="container-fluid arian-thread">
-      <div class="info_title">
-        <div class="container pos-l">Help > <span class="active-p">Documentation</span></div>
-      </div>
-    </div>
+    <ArianThread>
+      <template #baseText>
+        Help
+      </template>
+      <template #nextText>
+        Documentation
+      </template>
+    </ArianThread>
     <div class="foowrap">
       <div class="container main">
         <p>This page provides a summary on the species, data sources and URI patterns.</p>

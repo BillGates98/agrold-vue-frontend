@@ -1,6 +1,7 @@
 <script setup lang="js">
 import { addPlugin } from '@/assets/scripts/utils';
 import { A_GRO_LD_API_JSON_URL, WEB_APP_URL, FACETED_URL, SPAR_QL_ENDPOINT_URL, DEFAULT_API_FORMAT } from '../assets/scripts/config';
+import ArianThread from '@/components/shared/ArianThread.vue';
 
 const defaultQuery = `
 PREFIX agrold:<http://www.southgreen.fr/agrold/>
@@ -39,11 +40,15 @@ addPlugin("/sparql-editor/graphPlugin.js");
 </script>
 
 <template>
-  <div class="container-fluid arian-thread">
-    <div class="info_title">
-      <div class="container pos-l">Search > <span class="active-p">SPARQL Query Editor</span></div>
-    </div>
-  </div>
+  <ArianThread>
+    <template #baseText>
+      Search
+    </template>
+    <template #nextText>
+      SPARQL Query Editor
+    </template>
+  </ArianThread>
+
   <div class="foowrap">
     <div class="d-flex flex-column align-items-center justify-content-center ml-3 mr-3">
       <span>

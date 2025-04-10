@@ -3,6 +3,7 @@ import { addPlugin } from '@/assets/scripts/utils';
 import AdvancedSearchForm from '@/components/advanced-search/AdvancedSearchForm.vue';
 import AdvancedSearchModal from '@/components/advanced-search/AdvancedSearchModal.vue';
 import { A_GRO_LD_API_JSON_URL, WEB_APP_URL, FACETED_URL, SPAR_QL_ENDPOINT_URL, DEFAULT_API_FORMAT } from '../assets/scripts/config';
+import ArianThread from '@/components/shared/ArianThread.vue';
 
 
 const variables = `
@@ -40,11 +41,14 @@ setTimeout(() => {
 </script>
 
 <template>
-  <div class="container-fluid arian-thread">
-    <div class="info_title">
-      <div class="container pos-l">Search > <span class="active-p">Advanced form-based search</span></div>
-    </div>
-  </div>
+  <ArianThread>
+    <template #baseText>
+      Search
+    </template>
+    <template #nextText>
+      Advanced form-based search
+    </template>
+  </ArianThread>
   <div class="foowrap">
     <section>
       <div id="advanced-form" class="border-right">
@@ -90,26 +94,6 @@ setTimeout(() => {
   top: 0px;
   left: 0px;
 }
-
-.arian-thread {
-  height: 60px;
-  padding: 10px;
-  background: #f3f3f3;
-  font-weight: bold;
-  font-size: 25px;
-  color: #b3b3b3;
-}
-
-.info_title {
-  font-weight: bold;
-  font-size: 25px;
-  color: #b3b3b3;
-}
-
-.active-p {
-  color: #858d85;
-}
-
 
 .foowrap {
   position: relative;

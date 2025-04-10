@@ -1,13 +1,17 @@
 <script setup lang="ts">
+import ArianThread from '@/components/shared/ArianThread.vue';
 import { REL_FINDER_URL } from '../assets/scripts/config';
 </script>
 
 <template>
-  <div class="container-fluid arian-thread">
-    <div class="info_title">
-      <div class="container pos-l">Search > <span class="active-p">Explore relationship</span></div>
-    </div>
-  </div>
+  <ArianThread>
+    <template #baseText>
+      Search
+    </template>
+    <template #nextText>
+      Explore relationship
+    </template>
+  </ArianThread>
 
   <div class="foowrap m-4 d-flex flex-column">
     <div class="d-flex flex-row justify-content-start">

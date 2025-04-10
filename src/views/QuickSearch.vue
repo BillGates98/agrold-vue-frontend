@@ -1,6 +1,7 @@
 <script setup lang="js">
 import { FACETED_URL } from '@/assets/scripts/config';
 import { addPlugin } from '@/assets/scripts/utils';
+import ArianThread from '@/components/shared/ArianThread.vue';
 
 addPlugin("/scripts/introjs/intro.js");
 addPlugin("/scripts/dots.js");
@@ -38,11 +39,14 @@ $(document).ready(function () {
 </script>
 
 <template>
-  <div class="container-fluid arian-thread">
-    <div class="info_title">
-      <div class="container pos-l">Search > <span class="active-p">Quick Search</span></div>
-    </div>
-  </div>
+  <ArianThread>
+    <template #baseText>
+      Search
+    </template>
+    <template #nextText>
+      Quick Search
+    </template>
+  </ArianThread>
   <div class="foowrap">
     <div class="canvas">
       <canvas style="width:100%;height:100%;"></canvas>
