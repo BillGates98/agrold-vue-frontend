@@ -13,6 +13,7 @@ const variables = `
   `;
 // Add plugins
 addPlugin("/scripts/home1.js", variables);
+
 </script>
 
 <template>
@@ -124,51 +125,10 @@ addPlugin("/scripts/home1.js", variables);
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="col-lg-12 col-md-10 col-xs-12 h-centering">
-        <footer class="home footer-home">
-          <div class="container">
-            <div class="col-md-12 col-lg-12 resolve-grid">
-              <div class="col-md-2">
-                <a href="http://www.ibc-montpellier.fr/wp/wp5">
-                  <div class="hexagone"><img src="/images/IBC.png" alt="IBC"></div>
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="http://www.cirad.fr">
-                  <div class="hexagone"><img alt="CIRAD" src="/images/CIRAD.png"></div>
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="http://www.ird.fr">
-                  <div class="hexagone"><img src="/images/IRD.png" alt="IRD"></div>
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://www.umontpellier.fr">
-                  <div class="hexagone"><img src="/images/UM.png" alt="Univ Montpellier"></div>
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="https://www.france-bioinformatique.fr">
-                  <div class="hexagone"><img src="/images/IFB.png" alt="INRIA"></div>
-                </a>
-              </div>
-              <div class="col-md-2">
-                <a href="http://www.southgreen.fr">
-                  <div class="hexagone"><img src="/images/southgreen.png" alt="southgreen"></div>
-                </a>
-              </div>
-            </div>
-            <div class="copyright">&COPY; AgroLD 2019</div>
-          </div>
-        </footer>
-      </div>
-    </div>
   </div>
 </template>
 
-<style>
+<style scoped>
 /* @import '@/assets/css/hp.css'; */
 /* 
 .home {
@@ -176,6 +136,7 @@ addPlugin("/scripts/home1.js", variables);
 } */
 #fullPage {
   width: 100rem !important;
+  margin-top: -12rem;
 }
 
 #section0 {
@@ -189,7 +150,7 @@ addPlugin("/scripts/home1.js", variables);
 
 #app {
   /* max-width: none; */
-  padding-top: 0rem !important;
+  /* padding-top: 0rem !important; */
   /* margin-left: -4rem !important; */
 }
 
@@ -198,9 +159,9 @@ addPlugin("/scripts/home1.js", variables);
   padding-bottom: 0rem !important;
 }
 
-.footer {
+/* .footer {
   display: none !important;
-}
+} */
 
 .footer-home {
   padding-bottom: 5rem !important;

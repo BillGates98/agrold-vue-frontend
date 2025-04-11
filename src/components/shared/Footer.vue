@@ -33,6 +33,10 @@ $(document).ready(function () {
     });
     displayElementOnScroll('#footer');
 
+    const url = window.location.pathname.split("/").pop();
+    if (url == '') {
+        $('.hexagone').addClass('hexagone-no-filtered');
+    }
 });
 </script>
 
@@ -139,6 +143,12 @@ footer img {
     filter: gray;
     filter: grayscale(100%);
     background: #fff;
+}
+
+.hexagone-no-filtered {
+    -webkit-filter: grayscale(1);
+    -webkit-filter: grayscale(100%);
+    filter: none;
 }
 
 .hexagone:hover {
