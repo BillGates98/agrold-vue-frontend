@@ -4,17 +4,13 @@
 <template>
     <div class="container-fluid arian-thread">
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <div class="info_title">
-                    <div class="container pos-l">
-                        <slot name="baseText"></slot> > <span class="active-p">
-                            <slot name="nextText"></slot>
-                        </span>
-                    </div>
+            <div class="info_title" style="margin-left: 11rem">
+                <div class="container pos-l">
+                    <slot name="baseText"></slot> > <span class="active-p">
+                        <slot name="nextText"></slot>
+                    </span>
                 </div>
             </div>
-            <div class="col-2"></div>
         </div>
     </div>
 </template>

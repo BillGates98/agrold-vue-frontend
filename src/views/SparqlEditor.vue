@@ -162,10 +162,10 @@ addPlugin("/sparql-editor/graphPlugin.js");
           <div class="info_title" style="font-size: 19px">Results</div>
           <canvas id="hiddenCanvas"></canvas>
         </div>
-        <div id="push"></div> <!--add the push div here -->
+        <div id="push"></div>
       </div>
     </div>
-  </div> <!-- end of body, beginning of footer-->
+  </div>
 
   <div class="modal fade" id="historyModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -190,6 +190,6 @@ addPlugin("/sparql-editor/graphPlugin.js");
 @import '@/assets/sparql-editor/main.css';
 
 .only-queries {
-  width: 1400px !important;
+  width: 1300px !important;
 }
 </style>

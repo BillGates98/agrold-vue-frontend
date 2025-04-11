@@ -134,8 +134,4 @@ import ArianThread from '@/components/shared/ArianThread.vue';
   position: relative;
   min-height: 100%;
 }
-
-/* .jump-top {
-  padding-top: 30px;
-} */
 </style>
