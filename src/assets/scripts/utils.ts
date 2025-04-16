@@ -1,4 +1,4 @@
-export function addPlugin(file: string, extend: any) {
+export function addPlugin(file: string, extend?: any) {
     let plugin = document.createElement("script");
     plugin.setAttribute(
       "src",

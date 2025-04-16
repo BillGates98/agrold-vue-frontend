@@ -49,6 +49,12 @@ import ArianThread from '@/components/shared/ArianThread.vue';
             <em>yann[dot]pomie[at]ird[dot]fr</em>
           </p>
         </div>
+        <div>
+          <p><b>Bill Gates Happi Happi,</b><br>
+            <i>PhD student & Postdoc, IRD</i><br>
+            <em>bill[dot]happi[at]ird[dot]fr</em>
+          </p>
+        </div>
         <h4>Former members:</h4>
         <div>
           <p><b>Patrick Valduriez</b><br>
