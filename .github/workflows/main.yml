@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  push:
+    tags: 
+      - v[0-9]+.[0-9]+.[0-9]+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set Versions
+      uses: actions/github-script@v4
+      id: set_version
+      with:
+        script: |
+          const tag = context.ref.substring(10)
+          const no_v = tag.replace('v', '')
+          core.setOutput('no_v', no_v)
+
+    - name: Login to ghcr.io
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v3.1.1
+      with:
+        push: true
+        tags: ghcr.io/woodenmaiden/relfinderreformedfront:${{ steps.set_version.outputs.no_v }},ghcr.io/woodenmaiden/relfinderreformedfront:latest
+    
+    - name: Changelog from Conventional Commits
+      id: changelog
+      uses: requarks/changelog-action@v1.10.2
+      with:
+        token: ${{ github.token }}
+        tag: ${{ github.ref_name }}
+        excludeScopes: cicd,ci,cd,
+        writeToFile: false
+        useGitmojis: true
+        includeInvalidCommits: true
+
+    - name: Create Release
+      uses: ncipollo/release-action@v1.14.0
+      with:
+        allowUpdates: true
+        draft: false
+        makeLatest: true
+        name: ${{ github.ref_name }}
+        body: ${{ steps.changelog.outputs.changes }}
+        token: ${{ github.token }}
