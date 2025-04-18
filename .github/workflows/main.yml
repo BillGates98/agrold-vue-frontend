@@ -22,7 +22,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: Dockerfile
+          file: ../../Dockerfile
           push: ${{ github.event_name == 'push' }}
           tags: |
             billgates98/agrold-vue-frontend:latest
