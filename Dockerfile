@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+# RUN npm run build
 
 # Label: Dockerfile
 # Description: Dockerfile for a Vue.js application
