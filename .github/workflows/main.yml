@@ -1,4 +1,4 @@
-name: Docker Build and Push
+name: CI - Docker Build and Push
 
 on:
   push:
@@ -9,9 +9,18 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: https://ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Docker Buildx
         id: buildx
@@ -25,8 +34,8 @@ jobs:
           file: ./Dockerfile
           push: ${{ github.event_name == 'push' }}
           tags: |
-            billgates98/agrold-vue-frontend:latest
-            billgates98/agrold-vue-frontend:${{ github.sha }}
+            ghcr.io/billgates98/agrold-vue-frontend:latest
+            ghcr.io/billgates98/agrold-vue-frontend:${{ github.sha }}
           labels: |
             org.opencontainers.image.source=https://github.com/BillGates98/agrold-vue-frontend
             org.opencontainers.image.description="Vue version of Agrold"
