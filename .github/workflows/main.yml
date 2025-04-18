@@ -1,11 +1,20 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: myapp-pod
-  labels:
-    app: myapp
-    type: front-end
-spec:
-  containers: # list of containers
-    - name: nginx-container
-      image: nginx #docker image
+name: Build Vue
+on:
+  push:
+    branches:
+      - "dev"
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+    - uses: actions/checkout@v2
+    - id: Build-Vue
+      uses: xRealNeon/VuePagesAction@1.0.0
+      with:
+        username: 'BillGates98'
+        reponame: 'agrold-vue-frontend'
+        token: ${{ secrets.GITHUB_TOKEN }}
+      env:
+        VUE_APP_KEY: ${{ secrets.VUE_APP_KEY }}
+        VUE_APP_URL: ${{ secrets.VUE_APP_URL }}
