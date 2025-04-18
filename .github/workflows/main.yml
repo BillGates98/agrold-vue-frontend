@@ -36,4 +36,4 @@ jobs:
 
       - name: Image Digest
         if: steps.docker-build-push.outputs.digest
-        run: echo "Image digest: ${{ steps.docker-build-push.outputs.digest }}"
+        run: echo "Image digest }}"
