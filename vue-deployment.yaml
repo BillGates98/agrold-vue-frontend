@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agrold-vue-frontend
+  labels:
+    app:  agrold-vue-frontend
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  agrold-vue-frontend
+  template:
+    metadata:
+      labels:
+        app:  agrold-vue-frontend
+    spec:
+      containers:
+        - name:  agrold-vue-frontend
+          image: ghcr.io/billgates98/agrold-vue-frontend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "125m"
+              memory: "500Mi"
+            limits:
+              cpu: "250m"
+              memory: "1Gi"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:  agrold-vue-frontend-svc
+  labels:
+    app: agrold-vue-frontend
+spec:
+  ports:
+    - targetPort: 3000
+      name: http
+      protocol: TCP
+      port: 3000
+  selector:
+    app: agrold-vue-frontend
