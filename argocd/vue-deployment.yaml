@@ -44,3 +44,38 @@ spec:
       port: 3000
   selector:
     app: agrold-vue-frontend
+
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/issuer: letsencrypt
+    cert-manager.io/issuer-kind: Issuer
+    haproxy.router.openshift.io/timeout: 5m
+  labels:
+    app.kubernetes.io/instance: agrold-vue-frontend
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: agrold-vue-frontend
+    app.kubernetes.io/version: 1.1.2
+    # helm.sh/chart: relfinder-reformed-2.0.0
+  name: agrold-vue-frontend
+  namespace: agrold
+spec:
+  rules:
+    - host: vue-version.agrold.org
+      http:
+        paths:
+          - backend:
+              service:
+                name: agrold-vue-frontend
+                port:
+                  name: http
+            path: /
+            pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - vue-version.agrold.org
+      secretName: vue-version.agrold.org-tls
