@@ -62,7 +62,7 @@ metadata:
     app.kubernetes.io/version: 1.1.2
     # helm.sh/chart: relfinder-reformed-2.0.0
   name: agrold-vue-frontend
-  namespace: agrold-dev
+  namespace: agrold
 spec:
   rules:
     - host: vue-dev.agrold.org
