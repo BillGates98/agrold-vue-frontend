@@ -65,7 +65,7 @@ metadata:
   namespace: agrold
 spec:
   rules:
-    - host: vue-version.agrold.org
+    - host: vue-dev.agrold.org
       http:
         paths:
           - backend:
@@ -77,5 +77,5 @@ spec:
             pathType: ImplementationSpecific
   tls:
     - hosts:
-        - vue-version.agrold.org
-      secretName: vue-version.agrold.org-tls
+        - vue-dev.agrold.org
+      secretName: vue-dev.agrold.org-tls
