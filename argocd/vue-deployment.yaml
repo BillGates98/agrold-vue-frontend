@@ -57,7 +57,7 @@ metadata:
     haproxy.router.openshift.io/timeout: 5m
   labels:
     app.kubernetes.io/instance: agrold-vue-frontend
-    app.kubernetes.io/managed-by: Helm
+    # app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: agrold-vue-frontend
     app.kubernetes.io/version: 1.1.2
     # helm.sh/chart: relfinder-reformed-2.0.0
