@@ -74,7 +74,6 @@ spec:
               service:
                 name: agrold-vue-frontend-svc
                 port:
-                  name: http
                   number: 80
             path: /
             pathType: ImplementationSpecific
