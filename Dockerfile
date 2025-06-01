@@ -2,10 +2,10 @@
 FROM node:lts-alpine
 RUN npm install -g serve
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-COPY ./dist .
+# COPY package*.json ./
+# RUN npm install
+# COPY . .
+COPY dist ./dist
 # RUN npm run build
 
 # Label: Dockerfile
