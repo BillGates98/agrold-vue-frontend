@@ -15,6 +15,8 @@ spec:
       labels:
         app:  agrold-vue-frontend
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name:  agrold-vue-frontend
           image: ghcr.io/billgates98/agrold-vue-frontend:latest
@@ -79,3 +81,17 @@ spec:
     - hosts:
         - vue-dev.agrold.org
       secretName: vue-dev.agrold.org-tls
+
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ghcr-secret
+  namespace: agrold
+  annotations:
+    "argocd.argoproj.io/sync-options": "Replace=true"
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: >-
+    {{"eyJhdXRocyI6eyJnaGNyLmlvIjp7InVzZXJuYW1lIjoiQmlsbEdhdGVzOTgiLCJwYXNzd29yZCI6ImdocF9xdVVINE1lWEZqTFY4amZiZ0doV2puaHhqT01vZjkwd1ZVdEkiLCJlbWFpbCI6ImJpbGxoYXBwaUBnbWFpbC5jb20iLCJhdXRoIjoiUW1sc2JFZGhkR1Z6T1RnNloyaHdYM0YxVlVnMFRXVllSbXBNVmpocVptSm5SMmhYYW01b2VHcFBUVzltT1RCM1ZsVjBTUT09In19fQ=="}}
