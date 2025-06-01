@@ -40,8 +40,8 @@ metadata:
     app: agrold-vue-frontend
 spec:
   ports:
-    - targetPort: 3000
-      name: http
+    # - targetPort: 3000
+    - name: http
       protocol: TCP
       port: 3000
   selector:
@@ -63,7 +63,7 @@ metadata:
     app.kubernetes.io/name: agrold-vue-frontend
     app.kubernetes.io/version: 1.1.2
     # helm.sh/chart: relfinder-reformed-2.0.0
-  name: agrold-vue-frontend
+  name: agrold-vue-frontend-ingress
   namespace: agrold
 spec:
   rules:
@@ -72,7 +72,7 @@ spec:
         paths:
           - backend:
               service:
-                name: agrold-vue-frontend
+                name: agrold-vue-frontend-svc
                 port:
                   name: http
             path: /
